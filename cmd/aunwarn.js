@@ -32,11 +32,11 @@ module.exports = {
             user.roles.remove(warn3);
         }
         let embed = new MessageEmbed() // make a new embed
-        .setDescription(`У ${user} снят пред (РП)`)// if there is reason provided then show the reason, if not then show 'No reson provided'
+        .setDescription(`У ${user} снят пред (Администрация)`)// if there is reason provided then show the reason, if not then show 'No reson provided'
         .setColor('#00FF00')
         client.channels.cache.get('1040620201596690442').send({ embeds: [embed] }).then(() => {
             let dm = new MessageEmbed()
-            .setDescription(`Поздравляю!\nУ вас снят пред (РП)`)
+            .setDescription(`Поздравляю!\nУ вас снят пред (Администрация)`)
             .setColor('#00FF00')
             user.send({ embeds: [dm] }) // send a dm to the user that get warned
         });
