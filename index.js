@@ -1,0 +1,1 @@
+uncovered-cord-tablecloth
