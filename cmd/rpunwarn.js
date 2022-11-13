@@ -28,6 +28,7 @@ module.exports = {
             db.set(`rpwarns_${user.id}`, 0)
             message.channel.send('У него 0 предов').then(msg => setTimeout(() => msg.delete(), 5000))
         }
+          else {
         if(rpwarns === 0) {
             user.roles.remove(warn1);
         }
@@ -47,6 +48,7 @@ module.exports = {
             user.send({ embeds: [dm] }) // send a dm to the user that get warned
         });
         message.channel.send({ embeds: [embed] }).then(msg => setTimeout(() => msg.delete(), 5000))
+          }
         } catch {
             let errorEmbed = new MessageEmbed()
             .setDescription(":x: Произошла ошибка")
