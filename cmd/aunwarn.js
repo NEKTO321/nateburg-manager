@@ -18,10 +18,9 @@ module.exports = {
         try{
         await db.sub(`warns_${user.id}`, 1)
         let warns = await db.get(`warns_${user.id}`);
-        if(warns < 0) {
+        if(warns < 0) return
             db.set(`warns_${user.id}`, 0)
-            message.channel.send('У него 0 предов').then(msg => setTimeout(() => msg.delete(), 5000))
-        }
+            message.channel.send('У него 0 предов').then(msg => setTimeout(() => msg.delete(), 5000));
         if(warns === 0) {
             user.roles.remove(warn1);
         }

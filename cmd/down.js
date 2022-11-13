@@ -51,7 +51,7 @@ module.exports = {
             user.send({ embeds: [dm] })
             user.roles.add(role1);
             user.roles.remove(role0);
-            user.roles.remove(role1);
+            user.roles.remove(role3);
             user.roles.remove(role2);
             message.channel.send({embeds: [embed]}).then(msg => setTimeout(() => msg.delete(), 5000))
     }
