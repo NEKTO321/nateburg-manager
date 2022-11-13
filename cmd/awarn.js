@@ -47,6 +47,7 @@ module.exports = {
             user.roles.remove(role2);
             user.roles.remove(role3);
             user.roles.remove(admin);
+            user.roles.remove(nabor);
             user.roles.remove(warn1);
             user.roles.remove(warn2);
             user.roles.remove(warn3);

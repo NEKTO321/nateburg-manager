@@ -15,7 +15,8 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
   console.log(`Запущен ${client.user.tag}!`);
-  client.user.setStatus('dnd')
+  client.user.setPresence({status: "dnd"}); //sets presence
+  client.user.setActivity('by Dead', { type: 'WATCHING' });
 });
 
 client.commands = new Collection();
