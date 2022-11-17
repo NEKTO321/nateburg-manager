@@ -10,7 +10,7 @@ module.exports = {
         if(message.member.permissions.has("ADMINISTRATOR"));
           else if(!message.member.roles.cache.has("1040626336701616188")) return;
         let user = message.mentions.members.first() || client.users.cache.get(args[0]);
-        let role = message.guild.roles.cache.find(role => role.id === '1040568747213209670')
+        let role = message.guild.roles.cache.find(role => role.id === '1040569919529558046')
         let role2 = message.guild.roles.cache.find(role => role.id === '1040567660905254983')
         await db.set(`bzvan_${user.id}`, 0)
         await db.set(`warns_${user.id}`, 0)
