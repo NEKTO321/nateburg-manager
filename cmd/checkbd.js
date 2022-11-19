@@ -8,7 +8,8 @@ module.exports = {
     run: async(client, message, args) => {
         message.channel.bulkDelete(1);
         try{
-        if(!message.author.id === 552431396149395466) return
+        let perm = message.author.id
+        if(perm != 552431396149395466) return
         let bd = args.join(' ');
         if(!bd) return message.channel.send(`БД не указана`).then(msg => setTimeout(() => msg.delete(), 5000))
         let chislo = await db.get(`${bd}`)

@@ -5,8 +5,9 @@ module.exports = {
     run: async(client, message, args) => {
         message.channel.bulkDelete(1);
         let msg;
-        try{
-        if(!message.author.id === 552431396149395466) {
+        try{        
+        let perm = message.author.id
+        if(perm != 552431396149395466) {
         } else if(!args[0]) { // if you did not type what you wanna say, then the bot will return a message to you
             message.channel.send('Напиши, что сказать').then(msg => setTimeout(() => msg.delete(), 5000))
         } else{
