@@ -15,7 +15,7 @@ module.exports = {
         await db.set(`disable`, 1)
         client.user.setPresence({status: "invisible"}); //sets presence
         client.user.setActivity('Dead Inside | 1000-7', { type: 'WATCHING' });
-        client.channels.cache.get('1043779589878579220').send(`Бот отключён`);
+        client.channels.cache.get('1043779589878579220').send(`Бот выключен`);
         }   catch (error) {
             const errorEmbed = new MessageEmbed()
             .setDescription(':x: Произошла ошибка')
