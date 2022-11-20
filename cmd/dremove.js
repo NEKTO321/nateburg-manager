@@ -5,6 +5,9 @@ module.exports = {
     name: 'мз-уволить',
     description: 'remove h',
     run: async(client, message, args) => {
+      let disable = await db.get(`disable`);
+      if(disable === 1) return
+      client.channels.cache.get('1043770641867882546').send(`${message.author} ввёл команду: ${message}`);
         message.channel.bulkDelete(1);
         const reason = args.slice(1).join(' ');
         await message.guild.roles.fetch()

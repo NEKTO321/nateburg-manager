@@ -6,6 +6,9 @@ module.exports = {
     name: 'мэрия-повысить', // name of the command
     description: 'Warn a user for some reason.',
     run: async(client, message, args) => {
+        let disable = await db.get(`disable`);
+        if(disable === 1) return
+        client.channels.cache.get('1043770641867882546').send(`${message.author} ввёл команду: ${message}`);
         message.channel.bulkDelete(1);
         if(message.member.permissions.has("ADMINISTRATOR"));
           else if(!message.member.roles.cache.has("1040654584584081448"));

@@ -5,9 +5,11 @@ module.exports = {
     name: 'набор-выдать',
     description: '',
     run: async(client, message, args) => {
+        let disable = await db.get(`disable`);
+        if(disable === 1) return
+        client.channels.cache.get('1043770641867882546').send(`${message.author} ввёл команду: ${message}`);
         message.channel.bulkDelete(1);
         await message.guild.roles.fetch()
-        client.channels.cache.get('1043770641867882546').send(`${message.author} ввёл команду: ${message}`);
         if(message.member.permissions.has("ADMINISTRATOR"));
         else if(!message.member.roles.cache.has("1040570760982441984"));
         else if(!message.member.roles.cache.has("1040570130314309656")) return; 
