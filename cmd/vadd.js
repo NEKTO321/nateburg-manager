@@ -17,8 +17,8 @@ module.exports = {
         let user = message.mentions.members.first() || client.users.cache.get(args[0]);
         let role = message.guild.roles.cache.find(role => role.id === '1040571112381235240')
         let role2 = message.guild.roles.cache.find(role => role.id === '1040571201845735435')
-        await db.set(`azvan_${user.id}`, 0)
         if(!user) return message.channel.send({ content: "Введи пользователя нормально!" }).then(msg => setTimeout(() => msg.delete(), 5000))
+        await db.set(`azvan_${user.id}`, 0)
         try{
         let embed = new MessageEmbed()
         .setDescription(`${user} принят на рекрута (Армия)`)

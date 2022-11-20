@@ -15,9 +15,9 @@ module.exports = {
         let user = message.mentions.members.first() || client.users.cache.get(args[0]);
         let role = message.guild.roles.cache.find(role => role.id === '1040569919529558046')
         let role2 = message.guild.roles.cache.find(role => role.id === '1040567660905254983')
+        if(!user) return message.channel.send({ content: "Введи пользователя нормально!" }).then(msg => setTimeout(() => msg.delete(), 5000))
         await db.set(`bzvan_${user.id}`, 0)
         await db.set(`warns_${user.id}`, 0)
-        if(!user) return message.channel.send({ content: "Введи пользователя нормально!" }).then(msg => setTimeout(() => msg.delete(), 5000))
         try{
         let embed = new MessageEmbed()
         .setDescription(`${user} принят на стажировку (Администрация)`)

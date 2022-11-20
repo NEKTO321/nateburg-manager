@@ -11,7 +11,7 @@ module.exports = {
         message.channel.bulkDelete(1);
         let perm = message.author.id
         if(perm != 552431396149395466) return
-        client.channels.cache.get('1043770641867882546').send(`Перезапуск бота`);
+        client.channels.cache.get('1043779589878579220').send(`Перезапуск бота`);
         с
     }
 }

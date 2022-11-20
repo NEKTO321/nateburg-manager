@@ -14,17 +14,18 @@ for(const file of commandFiles){
   const command = require(`./cmd/${file}`);
   client.commands.set(command.name, command);
 }
-client.once('ready', () => {
+client.once('ready', async(client, message, args) => {
   console.log(`Запущен ${client.user.tag}!`);
-  let disable = db.get(`disable`)
+  let disable = await db.get(`disable`)
   if(disable === 0) {
   client.user.setPresence({status: "dnd"}); //sets presence
   client.user.setActivity('Dead Inside | 1000-7', { type: 'WATCHING' });
-  client.channels.cache.get('1043770641867882546').send(`Бот подключён`);
+  client.channels.cache.get('1043779589878579220').send(`Бот запущен на хостинге и включён`);
   }
   if(disable === 1) { 
   client.user.setPresence({status: "invisible"}); //sets presence
   client.user.setActivity('Dead Inside | 1000-7', { type: 'WATCHING' });
+  client.channels.cache.get('1043779589878579220').send(`Бот запущен на хостинге и выключен`);
   }
 });
 
