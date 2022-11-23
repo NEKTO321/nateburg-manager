@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js');
+const { QuickDB } = require('quick.db');
+const db = new QuickDB({table: "DB"});
 module.exports = {
     name: 'говорить',
     description: 'Say a message with the bot.',
@@ -10,8 +12,8 @@ module.exports = {
         let msg;
         try{        
         let perm = message.author.id
-        if(perm != 552431396149395466) {
-        } else if(!args[0]) { // if you did not type what you wanna say, then the bot will return a message to you
+        if(perm != 552431396149395466) return
+        if(!args[0]) { // if you did not type what you wanna say, then the bot will return a message to you
             message.channel.send('Напиши, что сказать').then(msg => setTimeout(() => msg.delete(), 5000))
         } else{
             msg = args.join(' '); //this code is for getting the message you want to send
