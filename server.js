@@ -1,14 +1,14 @@
-const express = require("express");
-const server = express();
+  const express = require("express");
+  const server = express();
 
-server.all("/", (req, res) => {
-  res.send("Старт Manager")
-})
-
-function keepAlive() {
-  server.listen(5000, () => {
-    console.log("Сайт готов")
+  server.all("/", (req, res) => {
+    res.send("Старт Manager")
   })
-}
 
-module.exports = keepAlive
+  function keepAlive() {
+    server.listen(5000, () => {
+      console.log("Сайт готов")
+    })
+  }
+
+  module.exports = keepAlive
