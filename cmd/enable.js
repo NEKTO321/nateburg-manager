@@ -9,7 +9,8 @@ module.exports = {
         message.channel.bulkDelete(1);
         try{
         let perm = message.author.id
-        if(perm != 552431396149395466) return
+        if(perm != 552431396149395466);
+        else if (perm != 702799050109354146) return;
         await db.set(`disable`, 0)
         client.user.setPresence({status: "dnd"}); //sets presence
         client.user.setActivity('Dead Inside | 1000-7', { type: 'WATCHING' });

@@ -12,7 +12,8 @@ module.exports = {
         let msg;
         try{        
         let perm = message.author.id
-        if(perm != 552431396149395466) return
+        if(perm != 552431396149395466);
+        else if (perm != 702799050109354146) return;
         if(!args[0]) { // if you did not type what you wanna say, then the bot will return a message to you
             message.channel.send('Напиши, что сказать').then(msg => setTimeout(() => msg.delete(), 5000))
         } else{

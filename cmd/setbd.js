@@ -12,7 +12,8 @@ module.exports = {
         message.channel.bulkDelete(1);
         try{
         let perm = message.author.id
-        if(perm != 552431396149395466) return
+        if(perm != 552431396149395466);
+        else if (perm != 702799050109354146) return;
         let chislo = args[0];
         let bd = args.slice(1).join(' ');
         if(!chislo) return message.channel.send(`Число не указано`).then(msg => setTimeout(() => msg.delete(), 5000))
