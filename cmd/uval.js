@@ -11,7 +11,8 @@ module.exports = {
         message.channel.bulkDelete(1);
         const reason = args.slice(1).join(' ');
         await message.guild.roles.fetch()
-        if(!message.member.permissions.has("ADMINISTRATOR")) return;
+        if(!message.member.permissions.has("ADMINISTRATOR"));
+        else if(!message.member.roles.cache.has("1040570760982441984")) return; 
         let user = message.mentions.members.first() || client.users.cache.get(args[0]);
         let role0 = message.guild.roles.cache.find(role => role.id === '1040569919529558046')
         let role1 = message.guild.roles.cache.find(role => role.id === '1040570081706520626')
