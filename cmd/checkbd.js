@@ -12,8 +12,7 @@ module.exports = {
         message.channel.bulkDelete(1);
         try{
         let perm = message.author.id
-        if(perm != 552431396149395466);
-        else if (perm != 702799050109354146) return;
+        if(perm != 552431396149395466) return
         let bd = args.join(' ');
         if(!bd) return message.channel.send(`БД не указана`).then(msg => setTimeout(() => msg.delete(), 5000))
         let chislo = await db.get(`${bd}`)
