@@ -40,7 +40,7 @@ client.categories = fs.readdirSync('./cmd');
     require(`./handler/${handler}`)(client)
 });
 setInterval(async () => {
-  await fetch('https://uncovered-cord-tablecloth.glitch.me')
+  await fetch('https://grateful-alder-molecule.glitch.me/')
 }, 4000);
 keepAlive();
 client.login(token);
